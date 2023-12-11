@@ -73,7 +73,7 @@ let parteners = new Swiper(".partenersSwiper", {
       slidesPerView: 3
     },
     350: {
-      slidesPerView: 1
+      slidesPerView: 2
     }
   }
 });
@@ -104,11 +104,12 @@ $(document).ready(function() {
     duration: 750,
     once: true
   });
-  // tooltip
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
-  );
 });
+function highlight(el) {
+  el.previousElementSibling.classList.add("h");
+}
+function dehighlight(el) {
+  if (el.value === "") {
+    el.previousElementSibling.classList.remove("h");
+  }
+}

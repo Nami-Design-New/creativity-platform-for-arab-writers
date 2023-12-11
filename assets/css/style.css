@@ -265,6 +265,7 @@ main .hero_section .heroSwiper .swiper-slide .overlay {
 }
 main .hero_section .heroSwiper .swiper-slide .overlay .text {
   width: min(700px, 100% - 32px);
+  margin-top: 100px;
 }
 main .hero_section .heroSwiper .swiper-slide .overlay h2 {
   color: #fff;
@@ -429,6 +430,17 @@ main .competitions .flipCard .cardFront .content .title {
   font-size: 20px;
   color: #fff;
 }
+main .competitions .flipCard .cardFront .time {
+  display: flex;
+  gap: 24px;
+}
+main .competitions .flipCard .cardFront .time p {
+  color: #fff;
+  font-size: 14px;
+}
+main .competitions .flipCard .cardFront .time p i {
+  margin-left: 4px;
+}
 main .competitions .flipCard .cardBack {
   padding: 20px;
   position: absolute;
@@ -550,4 +562,497 @@ main .competitions .flipCard:hover .cardFront {
 }
 main .competitions .flipCard:hover .cardBack {
   transform: rotateY(0deg);
+}
+main .page_header {
+  width: 100%;
+  height: 40vh;
+  background: #fafafa;
+  background-image: url("../images/page_head.jpg");
+  background-position: top left;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  background-repeat: no-repeat;
+}
+main .page_header h1 {
+  color: #000;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+main .page_header h6 {
+  font-size: 14px;
+  color: #000;
+}
+main .page_header h6 a {
+  color: #da9c28;
+}
+main .contact_section {
+  padding: 60px 12px;
+}
+main .contact_section form {
+  padding: 42px 12px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+@media (max-width: 576px) {
+  main .contact_section form {
+    padding: 32px 0;
+  }
+}
+main .contact_section form .form-group {
+  display: flex;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  main .contact_section form .form-group {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+main .contact_section form .form-group .inputfield {
+  width: 100%;
+  padding: 0 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+main .contact_section form .form-group .inputfield label {
+  position: absolute;
+  font-size: 14px;
+  color: #777777;
+  right: 16px;
+  transform: translateY(-50%);
+  top: 50%;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+  cursor: auto;
+}
+main .contact_section form .form-group .inputfield label.message-label {
+  top: 20%;
+}
+main .contact_section form .form-group .inputfield label.h {
+  top: -4px;
+  color: #000;
+}
+main .contact_section form .form-group .inputfield input,
+main .contact_section form .form-group .inputfield textarea {
+  width: 100%;
+  direction: rtl;
+  height: 45px;
+  border: none;
+  background: none;
+  outline: none;
+}
+main .contact_section form .form-group .inputfield input:focus + span::after,
+main .contact_section form .form-group .inputfield textarea:focus + span::after {
+  width: calc(100% - 32px);
+}
+main .contact_section form .form-group .inputfield textarea {
+  padding: 16px 0;
+  height: 130px;
+}
+main .contact_section form .form-group .inputfield .highlight {
+  width: 100%;
+  height: 2px;
+  background: #eeeeee;
+}
+main .contact_section form .form-group .inputfield .highlight::after {
+  content: "";
+  width: 0;
+  transition: all 0.4s ease-in-out;
+  left: 50%;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  transform: translate(-50%);
+}
+main .contact_section form button {
+  border: none;
+  background: none;
+  outline: none;
+  align-self: flex-end;
+  margin-left: 16px;
+  isolation: isolate;
+  padding: 0 16px;
+  width: 140px;
+  height: 50px;
+  border: 1px solid #da9c28;
+  color: #da9c28;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+main .contact_section form button i {
+  transform: scaleX(-1);
+  margin-right: 4px;
+}
+main .contact_section form button::after {
+  position: absolute;
+  content: "";
+  height: 150px;
+  width: 0;
+  right: 10px;
+  transition: all 0.4s ease-in-out;
+  background: #000;
+  transform: rotate(-25deg);
+  z-index: -1;
+}
+main .contact_section form button:hover {
+  color: #fff;
+  border-color: #000;
+}
+main .contact_section form button:hover::after {
+  width: 110%;
+  right: -10px;
+}
+main .contact_section .contact_info {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  padding: 24px;
+}
+main .contact_section .contact_info h3 {
+  font-size: 22px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+main .contact_section .contact_info h5 {
+  font-size: 22px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+main .contact_section .contact_info p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 22px;
+}
+main .contact_section .contact_info .field {
+  width: 100%;
+  display: flex;
+  margin-bottom: 32px;
+  gap: 16px;
+  align-items: center;
+}
+main .contact_section .contact_info .field .icon {
+  min-width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #da9c28;
+  overflow: hidden;
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .contact_section .contact_info .field .icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.4s ease-in-out;
+  background: #da9c28;
+}
+main .contact_section .contact_info .field .icon i {
+  font-size: 24px;
+  color: #da9c28;
+  z-index: 1;
+}
+main .contact_section .contact_info .field .text {
+  display: flex;
+  flex-direction: column;
+}
+main .contact_section .contact_info .field .text h4 {
+  margin-bottom: 4px;
+  color: #000;
+  font-size: 18px;
+}
+main .contact_section .contact_info .field .text a {
+  color: #777777;
+}
+main .contact_section .contact_info .field:hover .text a {
+  color: #000;
+}
+main .contact_section .contact_info .field:hover .icon {
+  border-color: transparent;
+}
+main .contact_section .contact_info .field:hover .icon i {
+  color: #fff;
+}
+main .contact_section .contact_info .field:hover .icon::after {
+  opacity: 1;
+}
+main .writeres {
+  padding: 60px 8px;
+}
+main .writeres .flipCard {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1000px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+main .writeres .flipCard .cardFront {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: cover !important;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+main .writeres .flipCard .cardFront .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: auto;
+  gap: 4px;
+}
+main .writeres .flipCard .cardFront .content .job {
+  color: #fff;
+  font-size: 12px;
+}
+main .writeres .flipCard .cardFront .content .title {
+  font-size: 18px;
+  color: #fff;
+}
+main .writeres .flipCard .cardFront .time {
+  display: flex;
+  gap: 24px;
+}
+main .writeres .flipCard .cardFront .time p {
+  color: #fff;
+  font-size: 14px;
+}
+main .writeres .flipCard .cardFront .time p i {
+  margin-left: 4px;
+}
+main .writeres .flipCard .cardBack {
+  padding: 20px;
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+}
+main .writeres .flipCard .cardBack .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main .writeres .flipCard .cardBack .content .sponser {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+main .writeres .flipCard .cardBack .content img {
+  height: 32px;
+}
+main .writeres .flipCard .cardBack .content h2 {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #000;
+  font-weight: 600;
+}
+main .writeres .flipCard .cardBack .content h2 img {
+  height: 24px;
+  margin-left: 8px;
+}
+main .writeres .flipCard .cardBack .content p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+  margin: 0;
+}
+main .writeres .flipCard .cardBack .content h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #000;
+}
+main .writeres .flipCard .cardBack .content ol {
+  padding: 0 16px 0 0;
+  margin: 0;
+}
+main .writeres .flipCard .cardBack .content ol li {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+  margin: 0;
+}
+main .writeres .flipCard .cardBack .content .btns {
+  display: flex;
+  gap: 32px;
+}
+main .writeres .flipCard .cardBack .content .animatedLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .writeres .flipCard .cardBack .content .animatedLink i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  transition: width 0.3s ease-in-out;
+}
+main .writeres .flipCard .cardBack .content .animatedLink i img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+main .writeres .flipCard .cardBack .content .animatedLink i span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  transition: all 0.4s ease-in-out;
+}
+main .writeres .flipCard .cardBack .content .animatedLink:hover {
+  padding: 0 20px;
+  color: #fff;
+}
+main .writeres .flipCard .cardBack .content .animatedLink:hover i {
+  width: 20px;
+}
+main .writeres .flipCard .cardBack .content .animatedLink:hover i span {
+  width: 100%;
+  border: 1px solid #da9c28;
+  background-color: #da9c28;
+}
+main .writeres .flipCard:hover {
+  z-index: 2;
+}
+main .writeres .flipCard:hover .cardFront {
+  transform: rotateY(-180deg);
+}
+main .writeres .flipCard:hover .cardBack {
+  transform: rotateY(0deg);
+}
+
+footer {
+  padding: 60px 8px 16px;
+  background: #fafafa;
+}
+footer .img img {
+  height: 120px;
+}
+footer .about p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  line-height: 26px;
+}
+footer .about .social {
+  display: flex;
+  margin-top: 16px;
+  gap: 12px;
+}
+footer .about .social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #da9c28;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+}
+footer .about .social a i {
+  color: #fff;
+}
+footer .about .social a:hover {
+  background: #000;
+  transform: translateY(-4px);
+}
+footer h3 {
+  color: #000;
+  font-weight: 600;
+  font-size: 24px;
+}
+@media (max-width: 992px) {
+  footer h3 {
+    margin-top: 32px;
+  }
+}
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer ul li {
+  padding-left: 16px;
+}
+footer ul li a {
+  color: #000;
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+}
+footer ul li a:hover {
+  color: #da9c28;
+}
+footer .copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+footer .copy p {
+  color: #000;
+  line-height: 26px;
+}
+footer .copy p a {
+  color: #da9c28;
 }/*# sourceMappingURL=style.css.map */

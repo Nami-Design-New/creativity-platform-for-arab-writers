@@ -268,6 +268,7 @@ main {
           flex-direction: column;
           .text {
             width: min(700px, 100% - 32px);
+            margin-top: 100px;
           }
           h2 {
             color: $white;
@@ -431,6 +432,17 @@ main {
             color: $white;
           }
         }
+        .time {
+          display: flex;
+          gap: 24px;
+          p {
+            color: $white;
+            font-size: 14px;
+            i{
+              margin-left: 4px;
+            }
+          }
+        }
       }
       .cardBack {
         padding: 20px;
@@ -551,6 +563,479 @@ main {
         .cardBack {
           transform: rotateY(0deg);
         }
+      }
+    }
+  }
+  .page_header {
+    width: 100%;
+    height: 40vh;
+    background: #fafafa;
+    background-image: url('../images/page_head.jpg');
+    background-position: top left;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    h1 {
+      color: $main;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    h6 {
+      font-size: 14px;
+      color: $main;
+      a {
+        color: $second;
+      }
+    }
+  }
+  .contact_section {
+    padding: 60px 12px;
+    form {
+      padding: 42px 12px;
+      background: $white;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      @media (max-width: 576px) {
+        padding: 32px 0;
+      }
+      .form-group {
+        display: flex;
+        width: 100%;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 48px;
+        }
+        .inputfield {
+          width: 100%;
+          padding: 0 16px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          label {
+            position: absolute;
+            font-size: 14px;
+            color: $text;
+            right: 16px;
+            transform: translateY(-50%);
+            top: 50%;
+            font-weight: 500;
+            transition: $transition;
+            cursor: auto;
+            &.message-label {
+              top: 20%;
+            }
+            &.h {
+              top: -4px;
+              color: $main;
+            }
+          }
+          input,
+          textarea {
+            width: 100%;
+            direction: rtl;
+            height: 45px;
+            @include clearInput();
+            &:focus + span::after {
+              width: calc(100% - 32px);
+            }
+          }
+          textarea {
+            padding: 16px 0;
+            height: 130px;
+          }
+          .highlight {
+            width: 100%;
+            height: 2px;
+            background: #eeeeee;
+            &::after {
+              content: "";
+              width: 0;
+              transition: $transition;
+              left: 50%;
+              height: 2px;
+              background: $main;
+              position: absolute;
+              transform: translate(-50%);
+            }
+          }
+        }
+      }
+      button {
+        @include clearInput();
+        align-self: flex-end;
+        margin-left: 16px;
+        isolation: isolate;
+        padding: 0 16px;
+        width: 140px;
+        height: 50px;
+        border: 1px solid $second;
+        color: $second;
+        border-radius: 4px;
+        @include centerFlex();
+        position: relative;
+        overflow: hidden;
+        transition: $transition;
+        i {
+          transform: scaleX(-1);
+          margin-right: 4px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          height: 150px;
+          width: 0;
+          right: 10px;
+          transition: $transition;
+          background: $main;
+          transform: rotate(-25deg);
+          z-index: -1;
+        }
+        &:hover {
+          color: $white;
+          border-color: $main;
+          &::after {
+            width: 110%;
+            right: -10px;
+          }
+        }
+      }
+    }
+    .contact_info {
+      width: 100%;
+      height: 100%;
+      background: $white;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      padding: 24px;
+      h3 {
+        font-size: 22px;
+        color: $main;
+        font-weight: 600;
+        margin-bottom: 32px;
+      }
+      h5 {
+        font-size: 22px;
+        color: $main;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      p {
+        color: $text;
+        font-size: 14px;
+        line-height: 22px;
+      }
+      .field {
+        width: 100%;
+        display: flex;
+        margin-bottom: 32px;
+        gap: 16px;
+        align-items: center;
+        .icon {
+          min-width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          border: 2px solid $second;
+          overflow: hidden;
+          isolation: isolate;
+          position: relative;
+          @include centerFlex();
+          &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 0;
+            transition: $transition;
+            background: $second;
+          }
+          i {
+            font-size: 24px;
+            color: $second;
+            z-index: 1;
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          h4 {
+            margin-bottom: 4px;
+            color: $main;
+            font-size: 18px;
+          }
+          a {
+            color: $text;
+          }
+        }
+        &:hover {
+          .text a {
+            color: $main;
+          }
+          .icon {
+            border-color: transparent;
+            i {
+              color: $white;
+            }
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .writeres{
+    padding: 60px 8px;
+    .flipCard {
+      width: 100%;
+      height: 300px;
+      @include centerFlex();
+      position: relative;
+      flex-shrink: 0;
+      perspective: 1000px;
+      user-select: none;
+      .cardFront {
+        width: 100%;
+        height: 100%;
+        padding: 24px;
+        border-radius: 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        background-size: cover !important;
+        background-position: top !important;
+        background-repeat: no-repeat !important;
+        backface-visibility: hidden;
+        transform: rotateY(0deg);
+        transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        .content {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: auto;
+          gap: 4px;
+          .job{
+            color: $white;
+            font-size: 12px;
+          }
+          .title {
+            font-size: 18px;
+            color: $white;
+          }
+        }
+        .time {
+          display: flex;
+          gap: 24px;
+          p {
+            color: $white;
+            font-size: 14px;
+            i{
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+      .cardBack {
+        padding: 20px;
+        position: absolute;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: $shadow;
+        background-color: $white;
+        .content {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .sponser {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          img {
+            height: 32px;
+          }
+          h2 {
+            font-size: 18px;
+            margin-top: 8px;
+            margin-bottom: 0;
+            color: $main;
+            font-weight: 600;
+            img {
+              height: 24px;
+              margin-left: 8px;
+            }
+          }
+          p {
+            font-size: 14px;
+            line-height: 24px;
+            color: $text;
+            margin: 0;
+          }
+          h6 {
+            margin: 0;
+            font-weight: 600;
+            color: $main;
+          }
+          ol {
+            padding: 0 16px 0 0;
+            margin: 0;
+            li {
+              font-size: 14px;
+              line-height: 24px;
+              color: $text;
+              margin: 0;
+            }
+          }
+          .btns {
+            display: flex;
+            gap: 32px;
+          }
+          .animatedLink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            color: $main;
+            transition: $transition;
+            position: relative;
+            width: fit-content;
+            i {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              width: 38px;
+              height: 38px;
+              transition: width 0.3s ease-in-out;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                padding: 10px;
+              }
+              span {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                z-index: -1;
+                transform: translateY(-50%);
+                width: 38px;
+                height: 38px;
+                border: 1px solid $main;
+                border-radius: 100px;
+                transition: $transition;
+              }
+            }
+            &:hover {
+              padding: 0 20px;
+              color: $white;
+              i {
+                width: 20px;
+                span {
+                  width: 100%;
+                  border: 1px solid $second;
+                  background-color: $second;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        z-index: 2;
+        .cardFront {
+          transform: rotateY(-180deg);
+        }
+        .cardBack {
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+}
+footer {
+  padding: 60px 8px 16px;
+  background: #fafafa;
+  .img {
+    img {
+      height: 120px;
+    }
+  }
+  .about {
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      color: $main;
+      line-height: 26px;
+    }
+    .social {
+      display: flex;
+      margin-top: 16px;
+      gap: 12px;
+      a {
+        width: 40px;
+        height: 40px;
+        @include centerFlex();
+        background: $second;
+        border-radius: 50%;
+        transition: $transition;
+        i {
+          color: $white;
+        }
+        &:hover {
+          background: $main;
+          transform: translateY(-4px);
+        }
+      }
+    }
+  }
+  h3 {
+    color: $main;
+    font-weight: 600;
+    font-size: 24px;
+    @media (max-width: 992px) {
+      margin-top: 32px;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      padding-left: 16px;
+      a {
+        color: $main;
+        font-weight: 600;
+        transition: $transition;
+        &:hover {
+          color: $second;
+        }
+      }
+    }
+  }
+  .copy {
+    @include centerFlex();
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    p {
+      color: $main;
+      line-height: 26px;
+      a {
+        color: $second;
       }
     }
   }
