@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 32px;
+  direction: rtl;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Cairo", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background: #fff !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+a {
+  color: #000;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+.fancybox__container {
+  z-index: 9999999999;
+}
+
+.fancybox__track,
+.fancybox__content,
+.carousel__track {
+  direction: ltr !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+
+/* ##################################### */
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 50px 50px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+@media (max-width: 992px) {
+  header {
+    border-radius: 0;
+  }
+}
+header nav {
+  height: 100%;
+  position: static !important;
+}
+header nav .logo {
+  flex: 1;
+}
+header nav .logo img {
+  height: 64px;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+}
+header nav ul li {
+  padding: 0 14px;
+}
+header nav ul li a {
+  font-weight: 700;
+  color: #000;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #da9c28;
+  transition: all 0.4s ease-in-out;
+}
+header nav ul li a:hover, header nav ul li a.active {
+  color: #da9c28;
+}
+header nav ul li a:hover::after, header nav ul li a.active::after {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  header nav ul {
+    position: absolute;
+    top: 100px;
+    right: -100%;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    justify-content: flex-start;
+    padding: 32px 0;
+    transition: all 0.4s ease-in-out;
+  }
+  header nav ul li {
+    padding: 8px 24px;
+  }
+  header nav ul.show {
+    right: 0;
+  }
+}
+header nav .btns {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+@media (max-width: 768px) {
+  header nav .btns {
+    display: none;
+  }
+}
+header nav .btns a {
+  color: #000;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  font-size: 14px;
+  background: #da9c28;
+  color: #fff;
+}
+header nav .menu-btn {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: none;
+  z-index: 2;
+  flex: 1;
+}
+@media (max-width: 992px) {
+  header nav .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-end;
+  }
+}
+header nav .menu-btn .menu-bar {
+  position: relative;
+  height: 2px;
+  width: 28px;
+  background-color: #000;
+  transition: 0.5s ease;
+}
+header nav .menu-btn .menu-bar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.5s ease;
+}
+header nav .menu-btn .menu-bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.5s ease;
+}
+header nav .menu-btn .menu-bar.menu-transform {
+  background-color: transparent;
+  transform: rotate(90deg);
+}
+header nav .menu-btn .menu-bar.menu-transform::before {
+  transform: translate(0px, 9px) rotate(135deg);
+}
+header nav .menu-btn .menu-bar.menu-transform::after {
+  transform: translate(0px, -9px) rotate(-135deg);
+}
+
+main .hero_section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+main .hero_section .heroSwiper {
+  width: 100%;
+  height: 100%;
+}
+main .hero_section .heroSwiper .swiper-slide {
+  position: relative;
+}
+main .hero_section .heroSwiper .swiper-slide .img {
+  width: 100%;
+  height: 100%;
+}
+main .hero_section .heroSwiper .swiper-slide .img img,
+main .hero_section .heroSwiper .swiper-slide .img video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .hero_section .heroSwiper .swiper-slide .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .hero_section .heroSwiper .swiper-slide .overlay .text {
+  width: min(700px, 100% - 32px);
+}
+main .hero_section .heroSwiper .swiper-slide .overlay h2 {
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+}
+main .hero_section .heroSwiper .swiper-slide .overlay p {
+  color: #fff;
+  text-align: center;
+}
+main .hero_section .heroSwiper .swiper-slide.swiper-slide-active .overlay h2 {
+  animation: fadeInUp 1s 0.5s both;
+}
+main .hero_section .heroSwiper .swiper-slide.swiper-slide-active .overlay p {
+  animation: fadeInUp 1s 0.75s both;
+}
+main .hero_section .swiper-button-next,
+main .hero_section .swiper-button-prev {
+  top: 95% !important;
+}
+main .hero_section .mainSliderNext {
+  right: 20px;
+}
+main .hero_section .mainSliderNext::after {
+  content: "\f178";
+  font-family: "Font Awesome 6 pro";
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+main .hero_section .mainSliderPrev {
+  right: 60px;
+  left: initial;
+}
+main .hero_section .mainSliderPrev::after {
+  content: "\f177";
+  font-family: "Font Awesome 6 pro";
+  background: none;
+  color: #fff;
+  font-size: 18px;
+}
+main .hero_section .mainSliderPagination {
+  width: auto;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .hero_section .mainSliderPagination .swiper-pagination-bullet {
+  width: 48px;
+  height: 4px;
+  background: #fff;
+  border-radius: 0;
+}
+main .parteners {
+  padding: 60px 8px;
+}
+main .parteners h2 {
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+}
+main .parteners .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .parteners img {
+  height: 100px;
+}
+main .purposes {
+  width: 100%;
+  padding: 60px 8px;
+  background: #fafafa;
+}
+main .purposes h2 {
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+}
+main .purposes p {
+  margin-bottom: 32px;
+}
+main .purposes .purpose {
+  background: #fff;
+  padding: 24px;
+  border-radius: 0 24px 0 24px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+main .purposes .purpose img {
+  height: 64px;
+  align-self: flex-start;
+}
+main .purposes .purpose:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 24px 0 24px 0;
+}
+main .purposes .purpose h4 {
+  color: #000;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+main .purposes .purpose p {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+}
+main .competitions {
+  padding: 60px 8px;
+  background-image: url("../images/pattern-1.webp");
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+main .competitions h2 {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 32px;
+}
+main .competitions .flipCard {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1000px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+main .competitions .flipCard .cardFront {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: cover !important;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+main .competitions .flipCard .cardFront .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: auto;
+  gap: 4px;
+}
+main .competitions .flipCard .cardFront .content .title {
+  font-size: 20px;
+  color: #fff;
+}
+main .competitions .flipCard .cardBack {
+  padding: 20px;
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+}
+main .competitions .flipCard .cardBack .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main .competitions .flipCard .cardBack .content .sponser {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+main .competitions .flipCard .cardBack .content img {
+  height: 32px;
+}
+main .competitions .flipCard .cardBack .content h2 {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #000;
+  font-weight: 600;
+}
+main .competitions .flipCard .cardBack .content h2 img {
+  height: 24px;
+  margin-left: 8px;
+}
+main .competitions .flipCard .cardBack .content p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+  margin: 0;
+}
+main .competitions .flipCard .cardBack .content h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #000;
+}
+main .competitions .flipCard .cardBack .content ol {
+  padding: 0 16px 0 0;
+  margin: 0;
+}
+main .competitions .flipCard .cardBack .content ol li {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+  margin: 0;
+}
+main .competitions .flipCard .cardBack .content .btns {
+  display: flex;
+  gap: 32px;
+}
+main .competitions .flipCard .cardBack .content .animatedLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .competitions .flipCard .cardBack .content .animatedLink i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  transition: width 0.3s ease-in-out;
+}
+main .competitions .flipCard .cardBack .content .animatedLink i img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+main .competitions .flipCard .cardBack .content .animatedLink i span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  transition: all 0.4s ease-in-out;
+}
+main .competitions .flipCard .cardBack .content .animatedLink:hover {
+  padding: 0 20px;
+  color: #fff;
+}
+main .competitions .flipCard .cardBack .content .animatedLink:hover i {
+  width: 20px;
+}
+main .competitions .flipCard .cardBack .content .animatedLink:hover i span {
+  width: 100%;
+  border: 1px solid #da9c28;
+  background-color: #da9c28;
+}
+main .competitions .flipCard:hover {
+  z-index: 2;
+}
+main .competitions .flipCard:hover .cardFront {
+  transform: rotateY(-180deg);
+}
+main .competitions .flipCard:hover .cardBack {
+  transform: rotateY(0deg);
+}/*# sourceMappingURL=style.css.map */
