@@ -980,6 +980,160 @@ main .writeres .flipCard:hover .cardFront {
 main .writeres .flipCard:hover .cardBack {
   transform: rotateY(0deg);
 }
+main .auth_section {
+  padding: 50px 12px;
+}
+main .auth_section .auth_form {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 36px 24px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .auth_section .auth_form h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 4px;
+}
+main .auth_section .auth_form p {
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+main .auth_section .auth_form p span {
+  color: #da9c28;
+}
+main .auth_section .auth_form .input_filed {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  position: relative;
+}
+main .auth_section .auth_form .input_filed label {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+main .auth_section .auth_form .input_filed input {
+  width: 100%;
+  height: 56px;
+  background: #eee;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0 16px;
+}
+main .auth_section .auth_form .input_filed #phone {
+  padding: 0 64px;
+}
+@media (max-width: 768px) {
+  main .auth_section .auth_form .input_filed #phone {
+    padding: 0 54px;
+  }
+}
+main .auth_section .auth_form .input_filed #password {
+  border-radius: 0 4px 4px 0;
+}
+main .auth_section .auth_form .input_filed .showPas {
+  min-width: 48px;
+  border: none;
+  background: none;
+  outline: none;
+  background: #eee;
+  border-radius: 4px 0 0 4px;
+  color: #777777;
+}
+main .auth_section .auth_form .input_filed .phone_code {
+  width: 70px;
+  height: 56px;
+  background: #eee;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .auth_section .auth_form .input_filed .phone_code img {
+  height: 24px;
+}
+main .auth_section .auth_form .input_filed.phone::after {
+  content: "+996";
+  position: absolute;
+  top: 48px;
+  left: 90px;
+  color: #000;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  main .auth_section .auth_form .input_filed.phone::after {
+    left: 80px;
+  }
+}
+@media (max-width: 576px) {
+  main .auth_section .auth_form .input_filed.phone::after {
+    left: 70px;
+  }
+}
+main .auth_section .auth_form a {
+  color: #da9c28;
+  transition: all 0.4s ease-in-out;
+}
+main .auth_section .auth_form a:hover {
+  color: #000;
+}
+main .auth_section .auth_form .log {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  outline: none;
+  background: #da9c28;
+  color: #fff;
+  margin: 12px 0;
+  transition: all 0.4s ease-in-out;
+}
+main .auth_section .auth_form .log:hover {
+  background: #000;
+}
+main .auth_section .auth_form p {
+  margin: 0;
+}
+main .auth_section .auth_form .otp-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0 24px;
+  direction: ltr !important;
+}
+main .auth_section .auth_form .otp-container .otp-input {
+  border-radius: 4px;
+  width: 80px;
+  direction: ltr !important;
+  height: 60px;
+  text-align: center;
+  background: #f4f4f4;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  outline: none;
+  border: none;
+}
+@media (max-width: 576px) {
+  main .auth_section .auth_form .otp-container .otp-input {
+    width: 48px;
+    height: 48px;
+  }
+}
+main .auth_section .auth_form .otp-container .otp-input::-webkit-inner-spin-button {
+  display: none;
+}
 
 footer {
   padding: 60px 8px 16px;

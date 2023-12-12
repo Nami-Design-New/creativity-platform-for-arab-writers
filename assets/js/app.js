@@ -113,3 +113,18 @@ function dehighlight(el) {
     el.previousElementSibling.classList.remove("h");
   }
 }
+function togglePasswordVisibility(event, passwordClass, button) {
+  event.preventDefault();
+  let passStateTogglerIcon = button.querySelector("i");
+  let passInpt = document.querySelector("." + passwordClass);
+  if (passInpt.type === "password") {
+    passInpt.type = "text";
+    passStateTogglerIcon.classList.remove("fa-eye-slash");
+    passStateTogglerIcon.classList.add("fa-eye");
+  } else {
+    passInpt.type = "password";
+    passStateTogglerIcon.classList.remove("fa-eye");
+    passStateTogglerIcon.classList.add("fa-eye-slash");
+  }
+  return false;
+}
