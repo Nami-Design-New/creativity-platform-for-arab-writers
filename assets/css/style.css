@@ -78,14 +78,6 @@ header {
   z-index: 99;
   top: 0;
   left: 0;
-  border-radius: 0 0 50px 50px;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-@media (max-width: 992px) {
-  header {
-    border-radius: 0;
-  }
 }
 header nav {
   height: 100%;
@@ -129,6 +121,14 @@ header nav ul li a:hover, header nav ul li a.active {
 header nav ul li a:hover::after, header nav ul li a.active::after {
   width: 100%;
 }
+header nav ul li.hide_lg {
+  display: none;
+}
+@media (max-width: 992px) {
+  header nav ul li.hide_lg {
+    display: block;
+  }
+}
 @media (max-width: 992px) {
   header nav ul {
     position: absolute;
@@ -155,20 +155,10 @@ header nav .btns {
   align-items: center;
   justify-content: end;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   header nav .btns {
     display: none;
   }
-}
-header nav .btns a {
-  color: #000;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 4px;
-  transition: all 0.4s ease-in-out;
-  font-size: 14px;
-  background: #da9c28;
-  color: #fff;
 }
 header nav .menu-btn {
   cursor: pointer;
@@ -503,56 +493,6 @@ main .competitions .flipCard .cardBack .content ol li {
 main .competitions .flipCard .cardBack .content .btns {
   display: flex;
   gap: 32px;
-}
-main .competitions .flipCard .cardBack .content .animatedLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  color: #000;
-  transition: all 0.4s ease-in-out;
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-main .competitions .flipCard .cardBack .content .animatedLink i {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 38px;
-  transition: width 0.3s ease-in-out;
-}
-main .competitions .flipCard .cardBack .content .animatedLink i img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 10px;
-}
-main .competitions .flipCard .cardBack .content .animatedLink i span {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: -1;
-  transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  border: 1px solid #000;
-  border-radius: 100px;
-  transition: all 0.4s ease-in-out;
-}
-main .competitions .flipCard .cardBack .content .animatedLink:hover {
-  padding: 0 20px;
-  color: #fff;
-}
-main .competitions .flipCard .cardBack .content .animatedLink:hover i {
-  width: 20px;
-}
-main .competitions .flipCard .cardBack .content .animatedLink:hover i span {
-  width: 100%;
-  border: 1px solid #da9c28;
-  background-color: #da9c28;
 }
 main .competitions .flipCard:hover {
   z-index: 2;
@@ -921,56 +861,6 @@ main .writeres .flipCard .cardBack .content .btns {
   display: flex;
   gap: 32px;
 }
-main .writeres .flipCard .cardBack .content .animatedLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  color: #000;
-  transition: all 0.4s ease-in-out;
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-main .writeres .flipCard .cardBack .content .animatedLink i {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 38px;
-  transition: width 0.3s ease-in-out;
-}
-main .writeres .flipCard .cardBack .content .animatedLink i img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 10px;
-}
-main .writeres .flipCard .cardBack .content .animatedLink i span {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: -1;
-  transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  border: 1px solid #000;
-  border-radius: 100px;
-  transition: all 0.4s ease-in-out;
-}
-main .writeres .flipCard .cardBack .content .animatedLink:hover {
-  padding: 0 20px;
-  color: #fff;
-}
-main .writeres .flipCard .cardBack .content .animatedLink:hover i {
-  width: 20px;
-}
-main .writeres .flipCard .cardBack .content .animatedLink:hover i span {
-  width: 100%;
-  border: 1px solid #da9c28;
-  background-color: #da9c28;
-}
 main .writeres .flipCard:hover {
   z-index: 2;
 }
@@ -1007,6 +897,56 @@ main .auth_section .auth_form p {
 main .auth_section .auth_form p span {
   color: #da9c28;
 }
+main .auth_section .auth_form .image-change-wrapper {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px 0;
+  margin-bottom: 16px;
+}
+main .auth_section .auth_form .image-change-wrapper label {
+  color: #000;
+  font-size: 14px;
+}
+main .auth_section .auth_form .image-change-wrapper .img-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .auth_section .auth_form .image-change-wrapper .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .auth_section .auth_form .image-change-wrapper .upload input {
+  display: none;
+}
+main .auth_section .auth_form .image-change-wrapper .upload .plus {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #da9c28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main .auth_section .auth_form .image-change-wrapper .upload .plus i {
+  font-size: 14px;
+  color: #fff;
+}
 main .auth_section .auth_form .input_filed {
   width: 100%;
   display: flex;
@@ -1020,7 +960,8 @@ main .auth_section .auth_form .input_filed label {
   color: #000;
   font-weight: 600;
 }
-main .auth_section .auth_form .input_filed input {
+main .auth_section .auth_form .input_filed input,
+main .auth_section .auth_form .input_filed textarea {
   width: 100%;
   height: 56px;
   background: #eee;
@@ -1028,6 +969,10 @@ main .auth_section .auth_form .input_filed input {
   border: none;
   border-radius: 4px;
   padding: 0 16px;
+}
+main .auth_section .auth_form .input_filed textarea {
+  height: 120px;
+  padding: 8px 16px;
 }
 main .auth_section .auth_form .input_filed #phone {
   padding: 0 64px;
@@ -1134,6 +1079,424 @@ main .auth_section .auth_form .otp-container .otp-input {
 main .auth_section .auth_form .otp-container .otp-input::-webkit-inner-spin-button {
   display: none;
 }
+main .competition_details {
+  padding: 60px 8px;
+}
+main .competition_details .about_competition h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+main .competition_details .about_competition .text p {
+  color: #000;
+  line-height: 28px;
+  width: min(100%, 650px);
+}
+main .competition_details .about_competition .time {
+  display: flex;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+main .competition_details .about_competition .time p {
+  color: #000;
+}
+main .competition_details .about_competition .time .inner {
+  display: flex;
+  gap: 16px;
+}
+main .competition_details .about_competition .time .inner p {
+  color: #da9c28;
+  font-size: 14px;
+}
+main .competition_details .about_competition .time .inner p i {
+  margin-left: 4px;
+}
+main .competition_details .group {
+  background-color: #fafafa;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+main .competition_details .group h3 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #000;
+  gap: 8px;
+}
+main .competition_details .group h3 img {
+  height: 32px;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .competition_details .group ul li {
+  font-size: 14px;
+  color: #777777;
+  line-height: 24px;
+}
+main .competition_details .group ul li i {
+  margin-left: 4px;
+  color: #da9c28;
+}
+main .competition_details .values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  main .competition_details .values {
+    gap: 8px;
+  }
+}
+main .competition_details .values .value {
+  padding: 24px;
+  height: 268px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+  min-width: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  isolation: isolate;
+}
+main .competition_details .values .value::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+main .competition_details .values .value .img {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .competition_details .values .value .img img {
+  width: 104%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: all 0.4s ease-in-out;
+}
+main .competition_details .values .value .text {
+  z-index: 9;
+}
+main .competition_details .values .value .text h6 {
+  font-weight: 700;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.4s ease-in-out;
+}
+main .competition_details .values .value .text p {
+  font-size: 14px;
+  transition: all 0.4s ease-in-out;
+  line-height: 24px;
+  color: #fff;
+  height: 0;
+  overflow: hidden;
+}
+main .competition_details .values .value:hover .text p {
+  height: 100px;
+}
+main .competition_details .values .value:hover .img img {
+  transform: scale(1.04) rotate(-2deg);
+}
+main .competition_details .prizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  main .competition_details .prizes {
+    gap: 8px;
+  }
+}
+main .competition_details .prizes .prize {
+  padding: 24px 16px;
+  flex: 1;
+  border: 1px dashed #d6d6d6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  border-radius: 12px;
+  transition: all 0.4s ease-in-out;
+}
+main .competition_details .prizes .prize h6 {
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+}
+main .competition_details .prizes .prize p {
+  font-size: 14px;
+  line-height: 24px;
+  transition: all 0.4s ease-in-out;
+}
+main .competition_details .prizes .prize:hover {
+  border-color: transparent;
+  background-color: #da9c28;
+  transform: translateY(-5px);
+}
+main .competition_details .prizes .prize:hover h6 {
+  color: white;
+}
+main .competition_details .prizes .prize:hover p {
+  color: white;
+}
+main .history {
+  padding: 60px 8px;
+}
+main .history .about_writing h2 {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+main .history .about_writing .text p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 28px;
+}
+main .history .image {
+  width: 100%;
+}
+main .history .image img {
+  width: 100%;
+  border-radius: 8px;
+}
+main .history .group {
+  background-color: #fafafa;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+main .history .group .group_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+main .history .group .group_name h5 {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+}
+main .history .group .poem {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.4s ease-in-out;
+  height: 100%;
+}
+main .history .group .poem .img {
+  width: 100%;
+}
+main .history .group .poem .img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 3/2;
+}
+main .history .group .poem .text {
+  padding: 16px;
+}
+main .history .group .poem .text h6 {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+}
+main .history .group .poem .text p {
+  color: #777777;
+  font-size: 12px;
+  line-height: 22px;
+}
+main .aticles {
+  padding: 60px 8px;
+}
+main .aticles .group {
+  background-color: #fafafa;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+main .aticles .group .group_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed #eee;
+}
+main .aticles .group .group_name h5 {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+}
+main .aticles .group .advices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  main .aticles .group .advices {
+    gap: 8px;
+  }
+}
+main .aticles .group .advices .advice {
+  padding: 24px 16px;
+  flex: 1;
+  border: 1px dashed #d6d6d6;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  border-radius: 12px;
+  transition: all 0.4s ease-in-out;
+}
+main .aticles .group .advices .advice h6 {
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  padding-right: 24px;
+}
+main .aticles .group .advices .advice h6 span {
+  right: -8px;
+  top: -12px;
+  position: absolute;
+  font-size: 48px;
+  color: #fafafa;
+  font-weight: 800;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #c8c8c8;
+  transition: all 0.4s ease-in-out;
+}
+main .aticles .group .advices .advice p {
+  font-size: 14px;
+  line-height: 24px;
+  transition: all 0.4s ease-in-out;
+}
+main .aticles .group .advices .advice:hover {
+  border-color: transparent;
+  background-color: #da9c28;
+  transform: translateY(-5px);
+}
+main .aticles .group .advices .advice:hover h6 {
+  color: white;
+}
+main .aticles .group .advices .advice:hover h6 span {
+  color: #da9c28;
+  -webkit-text-stroke-color: #fff;
+}
+main .aticles .group .advices .advice:hover p {
+  color: white;
+}
+main .blogs {
+  padding: 60px 8px 0;
+}
+main .blogs h2 {
+  color: #000;
+  font-size: 24px;
+}
+main .blogs .blog {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+main .blogs .blog a {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+main .blogs .blog a .blog_image {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+main .blogs .blog a .blog_image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(208deg, rgba(0, 0, 0, 0.0588235294), #000000);
+}
+main .blogs .blog a .blog_image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 3/2;
+  transition: all 0.4s ease-in-out;
+}
+main .blogs .blog a .date {
+  width: 50px;
+  height: 50px;
+  background-color: #da9c28;
+  position: absolute;
+  bottom: -25px;
+  left: 16px;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2px;
+}
+main .blogs .blog a .date span {
+  z-index: 99;
+  line-height: 18px;
+  font-size: 12px;
+  color: #fff;
+}
+main .blogs .blog h4 {
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+main .blogs .blog h4 a {
+  color: #000;
+}
+main .blogs .blog p {
+  font-size: 14px;
+  color: #777777;
+  line-height: 24px;
+}
+main .blogs .blog p a {
+  line-height: 24px;
+  display: inline;
+  margin-right: 4px;
+  color: #777777;
+  transition: all 0.4s ease-in-out;
+}
+main .blogs .blog p a:hover {
+  color: #da9c28;
+}
 
 footer {
   padding: 60px 8px 16px;
@@ -1209,4 +1572,76 @@ footer .copy p {
 }
 footer .copy p a {
   color: #da9c28;
+}
+
+.nice-select {
+  width: 100%;
+  background: #f3f3f3;
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding: 0px 16px;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #f3f3f3;
+}
+.nice-select .list {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.animatedLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.animatedLink i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  transition: width 0.3s ease-in-out;
+}
+.animatedLink i img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+.animatedLink i span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  transition: all 0.4s ease-in-out;
+}
+.animatedLink:hover {
+  padding: 0 20px;
+  color: #fff;
+}
+.animatedLink:hover i {
+  width: 20px;
+}
+.animatedLink:hover i span {
+  width: 100%;
+  border: 1px solid #da9c28;
+  background-color: #da9c28;
 }/*# sourceMappingURL=style.css.map */

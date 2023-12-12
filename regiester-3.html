@@ -9,6 +9,7 @@
     <title>منصة الابداع السعودي للكتاب العرب</title>
     <link rel="shortcut icon" href="assets/images/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -37,10 +38,14 @@
                     <li>
                         <a href="contact.html">تواصل معنا</a>
                     </li>
+                    <li class="hide_lg">
+                        <a href="login.html">تسجيل الدخول</a>
+                    </li>
                 </ul>
                 <div class="btns">
-                    <a href="login.html">
+                    <a href="login.html" class="animatedLink">
                         تسجيل الدخول
+                        <i class="fa-regular fa-left-long"><span></span></i>
                     </a>
                 </div>
                 <div class="menu-btn">
@@ -62,12 +67,41 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-12">
                         <form action="profile.html" class="auth_form">
+                            <div class="input-field image-change-wrapper">
+                                <div class="img-wrap">
+                                    <img id="uploadedImage" src="assets/images/user.png" alt="user">
+                                </div>
+                                <div class="d-flex w-100 pe-5 ps-5 justify-content-between align-items-center">
+                                    <label for="img">الصورةالشخصية</label>
+                                    <label class="upload">
+                                        <div class="plus">
+                                            <i class="fa-regular fa-plus"></i>
+                                        </div>
+                                        <input type="file" name="userImage" id="img-upload" accept="image/*">
+                                    </label>
+                                </div>
+                            </div>
                             <div class="input_filed">
                                 <label for="firstName"><i class="fa-light fa-user"></i> الاسم بالكامل</label>
                                 <div class="d-flex gap-2">
                                     <input type="text" id="firstName" name="firstName" placeholder="الاسم الأول">
                                     <input type="text" id="secondName" name="secondName" placeholder="اسم العائلة">
                                 </div>
+                            </div>
+                            <div class="input_filed">
+                                <label for="department"><i class="fa-regular fa-bullseye-arrow"></i> التخصص</label>
+                                <select name="vehicle_brand" class="select" id="department">
+                                    <option value="">اختر التخصص</option>
+                                    <option value="الشعر">الشعر</option>
+                                    <option value="الأدب">الأدب</option>
+                                    <option value="القصة القصيرة">القصة القصيره</option>
+                                    <option value="الرسم">الرسم</option>
+                                    <option value="التصوير">التصوير</option>
+                                </select>
+                            </div>
+                            <div class="input_filed">
+                                <label for="about"><i class="fa-regular fa-comment-captions"></i> نبذة عنك</label>
+                                <textarea name="about" id="about" placeholder="إضافة وصف"></textarea>
                             </div>
                             <div class="input_filed">
                                 <label for="password"><i class="fa-sharp fa-light fa-lock"></i> كلمة المرور</label>
@@ -169,7 +203,28 @@
         </div>
     </footer>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.nice-select.js"></script>
     <script src="assets/js/app.js"></script>
+    <!-- nice slecet -->
+    <script>
+        $(document).ready(function () {
+            $('select').niceSelect();
+        });
+    </script>
+    <!-- upload image -->
+    <script>
+        let inputImg = document.getElementById("img-upload");
+        let uploadedImage = document.getElementById("uploadedImage");
+        inputImg.addEventListener("change", () => {
+            if (inputImg.files && inputImg.files[0]) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(inputImg.files[0]);
+            }
+        });
+    </script>
 </body>
 
 </html>
