@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -528,6 +529,85 @@ main .page_header h6 {
 }
 main .page_header h6 a {
   color: #da9c28;
+}
+main .page_header .profile {
+  position: relative;
+}
+main .page_header .profile .profile_img {
+  position: absolute;
+  bottom: -88px;
+  overflow: hidden;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+main .page_header .profile .profile_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 768px) {
+  main .page_header .profile .profile_img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+main .page_header .profile .profile_info {
+  position: absolute;
+  right: 210px;
+  top: 16px;
+}
+@media (max-width: 768px) {
+  main .page_header .profile .profile_info {
+    right: 0;
+    top: 100px;
+  }
+}
+main .page_header .profile .profile_info h2 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+main .page_header .profile .profile_info h2 i {
+  color: #1edf1e;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  main .page_header .profile .profile_info h2 {
+    text-align: center;
+  }
+}
+main .page_header .profile .profile_info p {
+  font-size: 14px;
+  color: #777777;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  main .page_header .profile .profile_info p {
+    text-align: center;
+  }
+}
+main .page_header .profile .profile_info ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  main .page_header .profile .profile_info ul {
+    justify-content: center;
+  }
+}
+main .page_header .profile .profile_info ul li {
+  padding-left: 16px;
+}
+main .page_header .profile .profile_info ul li span,
+main .page_header .profile .profile_info ul li i,
+main .page_header .profile .profile_info ul li a {
+  color: #777777;
 }
 main .contact_section {
   padding: 60px 12px;
@@ -1497,6 +1577,233 @@ main .blogs .blog p a {
 main .blogs .blog p a:hover {
   color: #da9c28;
 }
+main .about_writer {
+  padding: 160px 8px 60px;
+  border-top: 1px solid #eee;
+}
+@media (max-width: 768px) {
+  main .about_writer {
+    padding-top: 260px;
+  }
+}
+main .about_writer .group {
+  background: #fafafa;
+  padding: 24px;
+  border-radius: 12px;
+}
+main .about_writer .nav {
+  border-bottom: 2px solid #eee;
+  display: flex;
+  gap: 32px;
+}
+main .about_writer .nav .nav-link {
+  color: #000;
+  padding: 2px 0;
+  font-weight: 600;
+  display: flex;
+  gap: 6px;
+  box-shadow: none;
+  position: relative;
+}
+main .about_writer .nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #da9c28;
+  transition: all 0.4s ease-in-out;
+}
+main .about_writer .nav .nav-link.active, main .about_writer .nav .nav-link:hover {
+  background: none;
+  color: #da9c28;
+}
+main .about_writer .nav .nav-link.active::after, main .about_writer .nav .nav-link:hover::after {
+  width: 100%;
+}
+main .about_writer .tab-content {
+  padding: 1.5rem 0 0;
+}
+main .about_writer .tab-content .text {
+  width: min(800px, 100%);
+}
+main .about_writer .tab-content .text p {
+  color: #777777;
+}
+main .about_writer .tab-content .work {
+  padding: 24px;
+  height: 268px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+  min-width: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  isolation: isolate;
+}
+main .about_writer .tab-content .work::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+main .about_writer .tab-content .work .img {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .about_writer .tab-content .work .img img {
+  width: 104%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: all 0.4s ease-in-out;
+}
+main .about_writer .tab-content .work .text {
+  z-index: 9;
+}
+main .about_writer .tab-content .work .text h6 {
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.4s ease-in-out;
+  margin: 0;
+  color: #fff;
+}
+main .about_writer .tab-content .work .text p {
+  font-size: 14px;
+  transition: all 0.4s ease-in-out;
+  line-height: 24px;
+  color: #fff;
+  height: 0;
+  overflow: hidden;
+}
+main .about_writer .tab-content .work .time {
+  z-index: 9;
+  display: flex;
+  gap: 24px;
+}
+main .about_writer .tab-content .work .time p {
+  color: #fff;
+  font-size: 12px;
+}
+main .about_writer .tab-content .work .time p i {
+  margin-left: 4px;
+}
+main .about_writer .tab-content .work:hover .text p {
+  height: 100px;
+}
+main .about_writer .tab-content .work:hover .img img {
+  transform: scale(1.04) rotate(-2deg);
+}
+main .blog_details__section {
+  padding: 60px 8%;
+}
+@media (max-width: 992px) {
+  main .blog_details__section .row {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+}
+main .blog_details__section .blog_img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+main .blog_details__section .blog_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .blog_details__section .blog_content h3 {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+@media (max-width: 576px) {
+  main .blog_details__section .blog_content h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+}
+main .blog_details__section .blog_content p {
+  font-size: 16px;
+  color: #777777;
+  line-height: 28px;
+  margin-bottom: 24px;
+}
+main .blog_details__section .blog_content .share_blog {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+main .blog_details__section .blog_content .share_blog h6 {
+  color: #000;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+main .blog_details__section .blog_content .share_blog .social_share {
+  display: flex;
+  gap: 8px;
+}
+main .blog_details__section .blog_content .share_blog .social_share a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .blog_details__section .blog_content .share_blog .social_share a i {
+  margin: 0;
+  transition: all 0.4s ease-in-out;
+  font-size: 16px;
+}
+main .blog_details__section .blog_content .share_blog .social_share a:hover {
+  background: #da9c28;
+  color: #da9c28;
+}
+main .blog_details__section .blog_content .share_blog .social_share a:hover i {
+  color: #fff;
+}
+main .poem_details {
+  padding: 60px 8px;
+}
+main .poem_details .img {
+  width: 100%;
+  height: 100%;
+}
+main .poem_details .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+  aspect-ratio: 4/2;
+}
+main .poem_details .entry-content p {
+  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+  font-size: 16px;
+  color: #000;
+}
 
 footer {
   padding: 60px 8px 16px;
@@ -1644,4 +1951,54 @@ footer .copy p a {
   width: 100%;
   border: 1px solid #da9c28;
   background-color: #da9c28;
+}
+
+.participate_model .form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.participate_model .form-group label {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+}
+.participate_model .form-group input {
+  outline: none;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+.participate_model .form-group textarea {
+  outline: none;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  height: 120px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.participate_model .form-group .buttton {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  background: #da9c28;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+.participate_model .form-group .buttton:hover {
+  background: #000;
+}
+
+.filepond--credits {
+  display: none !important;
+}
+
+.filepond--file {
+  direction: ltr !important;
 }/*# sourceMappingURL=style.css.map */
