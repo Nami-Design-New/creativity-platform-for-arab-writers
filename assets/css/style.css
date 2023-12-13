@@ -1241,7 +1241,7 @@ main .competition_details .values .value {
   flex-direction: column;
   position: relative;
   gap: 4px;
-  min-width: 150px;
+  min-width: 200px;
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
@@ -1315,7 +1315,7 @@ main .competition_details .prizes .prize {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 150px;
+  min-width: 200px;
   border-radius: 12px;
   transition: all 0.4s ease-in-out;
 }
