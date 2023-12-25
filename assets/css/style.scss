@@ -386,11 +386,16 @@ main {
     background-size: contain;
     background-position: bottom right;
     background-repeat: no-repeat;
-    h2 {
-      font-size: 28px;
-      color: $main;
+    .sectionHead{
       margin-bottom: 32px;
+
+      h2 {
+        font-size: 28px;
+        color: $main;
+        font-weight: bold;
+      }
     }
+    
     .flipCard {
       width: 100%;
       height: 450px;

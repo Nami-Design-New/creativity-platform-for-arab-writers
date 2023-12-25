@@ -377,10 +377,13 @@ main .competitions {
   background-position: bottom right;
   background-repeat: no-repeat;
 }
-main .competitions h2 {
+main .competitions .sectionHead {
+  margin-bottom: 32px;
+}
+main .competitions .sectionHead h2 {
   font-size: 28px;
   color: #000;
-  margin-bottom: 32px;
+  font-weight: bold;
 }
 main .competitions .flipCard {
   width: 100%;
